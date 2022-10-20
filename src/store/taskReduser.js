@@ -10,9 +10,7 @@ export function taskReducer(state = [], action) {
       newArray[elementIndex] = { ...newArray[elementIndex], ...action.payload };
       return newArray;
     case taskDeleted:
-      const newArr = [...state];
-      const arrAfterDel = newArr.filter((el) => el.id !== action.payload.id);
-      return arrAfterDel;
+      return state.filter((el) => el.id !== action.payload.id);
 
     default:
       return state;
