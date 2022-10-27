@@ -7,6 +7,7 @@ import {
   getTasks,
   loadTasks,
   getTasksLoadingStatus,
+  createTask,
 } from "./store/task";
 import configureStore from "./store/store";
 import { Provider, useSelector, useDispatch } from "react-redux";
@@ -53,6 +54,7 @@ const App = () => {
           </li>
         ))}
       </ul>
+      <button onClick={() => dispatch(createTask())}>Create Task</button>
     </>
   );
 };
