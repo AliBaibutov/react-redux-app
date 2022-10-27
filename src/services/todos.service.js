@@ -11,11 +11,8 @@ const todosService = {
     });
     return data;
   },
-  create: async () => {
-    const { data } = await httpService.post(todosEndpoint, {
-      title: "some title",
-      completed: false,
-    });
+  create: async (payload) => {
+    const { data } = await httpService.post(todosEndpoint, payload);
     return data;
   },
 };
